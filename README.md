@@ -1,7 +1,8 @@
 # Databricks Demo Project with NYC Taxi Data
 
+---
 
-**Project description:**
+## Project Description
 
 Developed data transformation workflows in **Unity Catalog** using managed Delta tables, following the **medallion architecture** (bronze, silver, and gold layers) with **PySpark** in **Databricks**.
 
@@ -9,68 +10,66 @@ Notebooks are incorporated into pipelines and jobs to support incremental update
 
 During the initial one-time setup, data for the first seven months of 2026 is dynamically downloaded via variables. Subsequent transformation steps append only the latest month's data using append mode.
 
+---
 
+## How to Run the Notebooks
 
-**How to run the notebooks:**
+If you are interested in the code, make sure to run the notebooks in the correct order:
 
-If you are interested in the codes. Make sure you run them in the right order:
+### [one_off]
 
-**[one_off]**
+- `creating_catalog_schemas_volume.ipynb`
 
-creating_catalog_schemas_volume.ipynb
+### [one_off/initial_load/notebooks/]
 
-**[one_off/initial_load/notebooks/]**
+#### 00_landing
 
-**00_landing**
+- `backfill_historical_yellow_taxi_trips.ipynb`  
+- `load_taxi_zone_lookup.ipynb`  
 
-  - backfill_historical_yellow_taxi_trips.ipynb
-  
-  - load_taxi_zone_lookup.ipynb
-  
-**01_bronze**
+#### 01_bronze
 
-  - yellow_trips_raw.ipynb
-  
-**02_silver**
+- `yellow_trips_raw.ipynb`  
 
-  - taxi_zone_lookup.ipynb
-  
-  - yellow_trips_cleansed.ipynb
-  
-  - yellow_trips_enriched.ipynb
-  
-**03_gold**
+#### 02_silver
 
-  - daily_trip_summary.ipynb
+- `taxi_zone_lookup.ipynb`  
+- `yellow_trips_cleansed.ipynb`  
+- `yellow_trips_enriched.ipynb`  
 
-**[transformations/notebooks/]** 
+#### 03_gold
 
-00_landing
+- `daily_trip_summary.ipynb`  
 
-  - ingest_lookup.ipynb
-  
-  - ingest_yellow_trips.ipynb
-  
-01_bronze
+### [transformations/notebooks/]
 
-  - yellow_trips_raw.ipynb
-  
-02_silver
+#### 00_landing
 
-  - taxi_zone_lookup.ipynb **(SCD Type 2)**
-  
-  - yellow_trips_cleansed.ipynb
-  
-  - yellow_trips_enriched.ipynb
-  
-03_gold
+- `ingest_lookup.ipynb`  
+- `ingest_yellow_trips.ipynb`  
 
-  - daily_trip_summary.ipynb
-    
+#### 01_bronze
 
-**Data Source:**
+- `yellow_trips_raw.ipynb`  
 
-https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+#### 02_silver
+
+- `taxi_zone_lookup.ipynb` **(SCD Type 2)**  
+- `yellow_trips_cleansed.ipynb`  
+- `yellow_trips_enriched.ipynb`  
+
+#### 03_gold
+
+- `daily_trip_summary.ipynb`  
+
+All notebooks in the transformation section can then be used as building blocks in Jobs & Pipelines for a streamlined workflow.
+
+---
+
+## Data Source
+
+https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page  
 
 The dataset is published monthly on the official website, typically with a two-month delay to accommodate complete submissions from vendors.
 
+---
