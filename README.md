@@ -8,8 +8,6 @@ Notebooks are incorporated into pipelines and jobs to support incremental update
 
 During the initial one-time setup, data for the first seven months of 2026 is dynamically downloaded via variables. Subsequent transformation steps append only the latest month's data using append mode.
 
----
-
 ## How to Run the Notebooks
 
 If you are interested in the code, make sure to run the notebooks in the correct order:
@@ -61,8 +59,6 @@ If you are interested in the code, make sure to run the notebooks in the correct
 - `daily_trip_summary.ipynb`  
 
 All notebooks in the transformation section can then be used as building blocks in Jobs & Pipelines for a streamlined workflow.
-
----
 
 ## Data Source
 
