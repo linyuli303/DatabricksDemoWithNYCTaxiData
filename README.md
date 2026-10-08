@@ -1,7 +1,5 @@
 # Databricks Demo Project with NYC Taxi Data
 
----
-
 ## Project Description
 
 Developed data transformation workflows in **Unity Catalog** using managed Delta tables, following the **medallion architecture** (bronze, silver, and gold layers) with **PySpark** in **Databricks**.
@@ -71,5 +69,3 @@ All notebooks in the transformation section can then be used as building blocks 
 https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page  
 
 The dataset is published monthly on the official website, typically with a two-month delay to accommodate complete submissions from vendors.
-
----
