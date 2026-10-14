@@ -65,3 +65,6 @@ All notebooks in the transformation section can then be used as building blocks 
 https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page  
 
 The dataset is published monthly on the official website, typically with a two-month delay to accommodate complete submissions from vendors.
+
+## Resource: dbt On Databricks
+https://github.com/malvik01/DBT-On-Databricks-Course/wiki
